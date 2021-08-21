@@ -121,4 +121,22 @@ class ApiClient_DAO extends ApiClient_Base {
     {
         return mStatus;
     }
+    /**
+     * It return the corresponding url related to the EndPoint and Host.
+     * @return It is the URL to execute a request.
+     */
+    public String getURL()
+    {
+        if( this.getURL() == null )
+        {
+            return null;
+        }
+        String url = this.getURL();
+        info( "Request URL: " + url );
+        if( this.getEndPoint() != null )
+        {
+            url = this.getEndPoint();
+        }
+        return url;
+    }
 }

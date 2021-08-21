@@ -17,8 +17,16 @@ import static org.junit.Assert.*;
  * @author ASUS
  */
 public class ApiClientTest {
+    String mApiKey ="";
+    int mSol;
+    String mHost = "" ;
+    String mEndPoint = "";
     
     public ApiClientTest() {
+        mApiKey = "frQqOQu97qbR1QblbP8VhMlDTlRYSHI2ydPo0Nqz";
+        mSol = 1000;
+        mHost = "https://api.nasa.gov";
+        mEndPoint = "/mars-photos/api/v1/rovers/curiosity/photos";
     }
     
     @BeforeClass
@@ -41,11 +49,13 @@ public class ApiClientTest {
     public void testSomeMethod() {
         ApiClient target = new ApiClient();
         String cur;
+        target.setHost(mHost);
+        target.setEndPoint( mEndPoint+"?sol="+mSol+"&api_key="+mApiKey );
         cur = target.get();
         System.out.println("Response:");
         System.out.println( cur );
         if( target.getStatus() > 299 ){
-            fail("The GET request found some problme, the request styatus is: " + target.getStatus() );
+            fail("The GET request found some problems, the request status is: " + target.getStatus() );
         }
     }
     
