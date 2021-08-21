@@ -13,6 +13,8 @@ import java.net.URL;
 import java.net.HttpURLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  *
@@ -23,7 +25,6 @@ class ApiClient_Logic extends ApiClient_DAO
 
     private HttpURLConnection mCon;
     private int mTimeOut = 5000;
-    
 
     /**
      * It send a GET request tot he endPoint,
@@ -34,13 +35,7 @@ class ApiClient_Logic extends ApiClient_DAO
         try
         {
             
-            if( this.getURL() == null )
-            {
-                error("( ApiClient - get ) The URL is not valid: "+this.getURL() );
-                return null;
-            }
-            URL url = new URL( this.getURL() );
-            //URL url = new URL("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=frQqOQu97qbR1QblbP8VhMlDTlRYSHI2ydPo0Nqz");
+            URL url = new URL("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=frQqOQu97qbR1QblbP8VhMlDTlRYSHI2ydPo0Nqz");
             
             mCon = (HttpURLConnection) url.openConnection();
             
@@ -49,12 +44,11 @@ class ApiClient_Logic extends ApiClient_DAO
             mCon.setReadTimeout(mTimeOut);
             
             int status =  mCon.getResponseCode();
-            this.setStatus( status );
+            log("Status: "+status);
             if( status > 299 )
             {
                 error("Status: "+status+" - Connection fails.");
                 res = processError();
-                
                 if( res == null )
                 {
                     error(  "( ApiClient_Logic - get ) Unknow error.");
@@ -62,21 +56,18 @@ class ApiClient_Logic extends ApiClient_DAO
                     error(  "( ApiClient_Logic - get ) "+ res );
                 }
                 
-                
-            }else{
-            
-                info("Status: "+status+" - Connection success.");
-                res = processResponse();
+                return res;
             }
+            
+            info("Status: "+status+" - Connection success.");
+            
+            res = processResponse();
+            
         }catch(Exception e){
             this.error( "( ApiClient_Logic - get ) "+e.getMessage());
         }
         finally
         {
-            if( mCon != null )
-            {
-                mCon.disconnect();
-            }
             return res;
         }
     }
@@ -128,12 +119,32 @@ class ApiClient_Logic extends ApiClient_DAO
             }
             reader.close();
             res = content.toString();
+            JSONparser( res );
         }catch( Exception e){
             error("( processError - processError ) "+e.getMessage());
         }
         finally{
             return res;
         }
+    }
+    protected static void JSONparser( String jsonStr )
+    {
+        if( jsonStr == null )
+        {
+            return;
+        }
+        
+        JSONObject json    = new JSONObject( jsonStr );
+        JSONArray  jsonarr = json.getJSONArray("photos");
+
+        for (int i = 0; i < jsonarr.length(); i++) {
+            
+          JSONObject nameservice = jsonarr.getJSONObject(i);
+          String id   = nameservice.getInt("id")+"";
+          String sol = nameservice.getInt("sol")+"";
+            System.out.println("---- "+i+")");
+            System.out.println("             id: "+id +" - sol: "+sol);
+        }        
     }
     
 }
