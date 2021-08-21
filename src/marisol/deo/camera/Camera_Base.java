@@ -5,6 +5,8 @@
  */
 package marisol.deo.camera;
 
+import tools.logs.Logger;
+
 /**
  *
  * @author ASUS

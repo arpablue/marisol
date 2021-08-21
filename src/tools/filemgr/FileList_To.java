@@ -5,11 +5,11 @@
  */
 package tools.filemgr;
 
-import java.util.ArrayList;
-
 /**
- * It class, load the conten of file and it can return a string with alll the contnet of the file.
+ *
  * @author ASUS
  */
-public class FileList extends FileList_To{
+class FileList_To extends FileList_Logic
+{
+    
 }

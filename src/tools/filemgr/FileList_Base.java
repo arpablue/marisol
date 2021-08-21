@@ -5,11 +5,13 @@
  */
 package tools.filemgr;
 
-import java.util.ArrayList;
+import tools.logs.Logger;
 
 /**
- * It class, load the conten of file and it can return a string with alll the contnet of the file.
+ *
  * @author ASUS
  */
-public class FileList extends FileList_To{
+class FileList_Base extends Logger
+{
+    
 }

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tools.filemgr;
-
-import java.util.ArrayList;
+package marisol.deo.photo;
 
 /**
- * It class, load the conten of file and it can return a string with alll the contnet of the file.
+ *
  * @author ASUS
  */
-public class FileList extends FileList_To{
+class Photo_Logic extends Photo_DAO
+{
+    
 }

@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package marisol.deo.rover;
+package marisol.deo.photo;
 
 /**
  *
  * @author ASUS
  */
-class Rover_To extends Rover_Logic 
+class Photo_To extends Photo_Logic
 {
     /**
-     * It return a JSON object related in a string with all the data of the rover.
+     * It return a JSON object related in a string with all the data of the camera.
      * @return 
      */
     @Override
@@ -25,40 +25,47 @@ class Rover_To extends Rover_Logic
         }else{
             res = res + mId;
         }
-        res = res + ",\"name\":";
-        if( mName == null ) 
+        
+        res = res + ",\"sol\":";
+        if( mSol < 0 ) 
         {
             res = res + "null";
         }else{
-            res = res + "\""+mName+"\"";
+            res = res +mSol;
         }
         
-        res = res + ",\"status\":";
-        if( mStatus == null ) 
+        res = res + ",\"earth_date\":";
+        if( this.mEarthDate == null ) 
         {
             res = res + "null";
         }else{
-            res = res + "\""+mStatus+"\"";
-        }
-
-        res = res + ",\"landing_date\":";
-        if( this.mLandingDate == null ) 
-        {
-            res = res + "null";
-        }else{
-            res = res + "\""+mLandingDate+"\"";
+            res = res + "\""+ this.mEarthDate +"\"";
         }
         
-        res = res + ",\"launch_date\":";
-        if( this.mLaunchDate == null ) 
+        res = res + ",\"img_src\":";
+        if( this.mImgSrc == null ) 
         {
             res = res + "null";
         }else{
-            res = res + "\""+mLaunchDate+"\"";
+            res = res + "\""+ this.mImgSrc +"\"";
         }
-
+        
+        res = res + ",\"camera\":";
+        if( this.mRover == null ) 
+        {
+            res = res + "null";
+        }else{
+            res = res + this.mCamera;
+        }
+        
+        res = res + ",\"rover\":";
+        if( this.mRover == null ) 
+        {
+            res = res + "null";
+        }else{
+            res = res + this.mRover;
+        }
         res = res + "}";
         return res;
     }
-    
 }

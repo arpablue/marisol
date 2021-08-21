@@ -5,28 +5,25 @@
  */
 package marisol.deo.rover;
 
+import marisol.IJSON;
 import org.json.JSONObject;
 
 /**
  *
  * @author ASUS
  */
-class Rover_DAO extends Rover_Base
+class Rover_DAO extends Rover_Base implements IJSON
 {
     /**
-     * It contains the identifier of the rover
+     * It contains the identifier
      */
     protected int mId;
     /**
-     * It contiant the name of the rover
+     * It contiant the name.
      */
     protected String mName;
     /**
-     * It contiant the Rover identificator.
-     */
-    protected int mRoverId;
-    /**
-     * It contains the status of the reover.
+     * It contains the status.
      */
     protected String mStatus;
     /**
@@ -39,14 +36,14 @@ class Rover_DAO extends Rover_Base
     protected String mLaunchDate;
     public Rover_DAO(){
         super();
-        mRoverId = -1;
         mId = -1;
     }
     /**
      * It load the data form a JSONObject
-     * @param data
-     * @return 
+     * @param data It is the JSON object that content the data for the Rover.
+     * @return It is true if all data has been loaded without proiblems.
      */
+    @Override
     public boolean fromJSON( JSONObject data )
     {
         boolean res = false;
@@ -55,7 +52,6 @@ class Rover_DAO extends Rover_Base
         }
         try{
             mId = data.getInt("id");
-            mRoverId = data.getInt("rover_id");
             mName = data.getString("name");
             mStatus = data.getString("status");
             mLandingDate = data.getString("landing_date");

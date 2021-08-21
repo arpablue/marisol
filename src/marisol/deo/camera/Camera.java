@@ -9,6 +9,7 @@ package marisol.deo.camera;
  *
  * @author ASUS
  */
-public class Camera {
+public class Camera extends Camera_To
+{
     
 }
