@@ -34,7 +34,13 @@ class ApiClient_Logic extends ApiClient_DAO
         try
         {
             
-            URL url = new URL("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=frQqOQu97qbR1QblbP8VhMlDTlRYSHI2ydPo0Nqz");
+            if( this.getURL() == null )
+            {
+                error("( ApiClient - get ) The URL is not valid: "+this.getURL() );
+                return null;
+            }
+            URL url = new URL( this.getURL() );
+            //URL url = new URL("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=frQqOQu97qbR1QblbP8VhMlDTlRYSHI2ydPo0Nqz");
             
             mCon = (HttpURLConnection) url.openConnection();
             
@@ -67,7 +73,10 @@ class ApiClient_Logic extends ApiClient_DAO
         }
         finally
         {
-            mCon.disconnect();
+            if( mCon != null )
+            {
+                mCon.disconnect();
+            }
             return res;
         }
     }

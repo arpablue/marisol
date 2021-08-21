@@ -127,15 +127,15 @@ class ApiClient_DAO extends ApiClient_Base {
      */
     public String getURL()
     {
-        if( this.getURL() == null )
+        if( this.getHost() == null )
         {
             return null;
         }
-        String url = this.getURL();
+        String url = this.getHost();
         info( "Request URL: " + url );
         if( this.getEndPoint() != null )
         {
-            url = this.getEndPoint();
+            url = url + this.getEndPoint();
         }
         return url;
     }
