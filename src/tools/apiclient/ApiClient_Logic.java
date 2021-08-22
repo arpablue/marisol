@@ -35,7 +35,7 @@ class ApiClient_Logic extends ApiClient_DAO
         try
         {
             
-            URL url = new URL("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=frQqOQu97qbR1QblbP8VhMlDTlRYSHI2ydPo0Nqz");
+            URL url = new URL( this.getURL() );
             
             mCon = (HttpURLConnection) url.openConnection();
             
@@ -119,7 +119,6 @@ class ApiClient_Logic extends ApiClient_DAO
             }
             reader.close();
             res = content.toString();
-            JSONparser( res );
         }catch( Exception e){
             error("( processError - processError ) "+e.getMessage());
         }
@@ -127,24 +126,4 @@ class ApiClient_Logic extends ApiClient_DAO
             return res;
         }
     }
-    protected static void JSONparser( String jsonStr )
-    {
-        if( jsonStr == null )
-        {
-            return;
-        }
-        
-        JSONObject json    = new JSONObject( jsonStr );
-        JSONArray  jsonarr = json.getJSONArray("photos");
-
-        for (int i = 0; i < jsonarr.length(); i++) {
-            
-          JSONObject nameservice = jsonarr.getJSONObject(i);
-          String id   = nameservice.getInt("id")+"";
-          String sol = nameservice.getInt("sol")+"";
-            System.out.println("---- "+i+")");
-            System.out.println("             id: "+id +" - sol: "+sol);
-        }        
-    }
-    
 }

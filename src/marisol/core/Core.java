@@ -6,6 +6,9 @@
 package marisol.core;
 
 import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import tools.filemgr.FileList;
 import tools.logs.Logger;
 
 
@@ -14,13 +17,29 @@ import tools.logs.Logger;
  *
  * @author ASUS
  */
-public class Core extends Logger{
-    protected String mApiKey;
-    protected ArrayList<String> mRovers;
-    protected Core(){
-        
+public class Core extends Core_To{
+    protected static Core CORE = null;
+    public static Core getCore()
+    {
+        if( CORE == null )
+        {
+            CORE = new Core();
+            CORE.loadJSONfile("conf/settings.json");
+        }
+        return CORE;
     }
-    protected boolean loadJSONfile(String path){
-        
+    /**
+     * It return the KEY API to be used in the request of the application.
+     * @return It is the API KEY.
+     */
+    public static String getKeyApi() {
+        return Core.getCore().getKeyAPì_Settings();
+    }
+    /**
+     * It return the list of rovers to e request in the system.
+     * @return IOt is the list of rovers.
+     */
+    public static ArrayList<String> getRovers() {
+        return Core.getCore().getRovers_Settings();
     }
 }

@@ -11,5 +11,22 @@ package tools.filemgr;
  */
 class FileList_To extends FileList_Logic
 {
-    
+    /**
+     * It return the content of thje file in a single string
+     * @return 
+     */
+    @Override
+    public String toString()
+    {
+        if( this.mLines == null )
+        {
+            return "";
+        }
+        String res = "";
+        for( String line : this.mLines )
+        {
+            res = res + line +"\n";
+        }
+        return res;
+    }
 }

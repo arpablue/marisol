@@ -17,6 +17,9 @@ import org.json.JSONObject;
  */
 class PhotoList_DAO extends PhotoList_Base 
 {
+    /**
+     * It ist he gour of photost fromt he 
+     */
     protected ArrayList<Photo> mPhotos;
     /**
      * Load the json data form a string with JSON format.
@@ -58,5 +61,11 @@ class PhotoList_DAO extends PhotoList_Base
             return res;
         }
     }
-    
+    /**
+     * It return the number photos.
+     * @return It is the number of photos.
+     */
+    public int size(){
+        return this.mPhotos.size();
+    }
 }
