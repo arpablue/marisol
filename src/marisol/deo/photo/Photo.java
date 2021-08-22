@@ -7,7 +7,7 @@ package marisol.deo.photo;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public class Photo extends Photo_To
 {

@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class ApiClient_Logic extends ApiClient_DAO 
 {

@@ -10,7 +10,7 @@ import java.io.RandomAccessFile;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class FileList_Logic extends FileList_DAO
 {

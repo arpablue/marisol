@@ -7,7 +7,7 @@ package marisol.deo.camera;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Camera_Logic extends Camera_DAO
 {

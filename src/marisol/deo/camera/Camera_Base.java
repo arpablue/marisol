@@ -9,7 +9,7 @@ import tools.logs.Logger;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Camera_Base extends Logger
 {

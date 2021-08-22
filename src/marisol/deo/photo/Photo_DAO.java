@@ -5,14 +5,14 @@
  */
 package marisol.deo.photo;
 
-import marisol.IJSON;
+import marisol.interfaces.IJSON;
 import marisol.deo.camera.Camera;
 import marisol.deo.rover.Rover;
 import org.json.JSONObject;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Photo_DAO extends Photo_Base implements IJSON
 {

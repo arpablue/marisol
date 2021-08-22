@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * It class, load the conten of file and it can return a string with alll the contnet of the file.
- * @author ASUS
+ * @author Augusto Flores
  */
 public class FileList extends FileList_To{
 }

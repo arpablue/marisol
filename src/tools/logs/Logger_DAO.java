@@ -7,7 +7,7 @@ package tools.logs;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Logger_DAO extends Logger_Base{
     

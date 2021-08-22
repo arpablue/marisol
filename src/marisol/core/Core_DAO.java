@@ -12,7 +12,7 @@ import tools.filemgr.FileList;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Core_DAO extends Core_Base 
 {

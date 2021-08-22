@@ -5,12 +5,12 @@
  */
 package marisol.deo.camera;
 
-import marisol.IJSON;
+import marisol.interfaces.IJSON;
 import org.json.JSONObject;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Camera_DAO extends Camera_Base implements IJSON
 {
@@ -57,5 +57,4 @@ class Camera_DAO extends Camera_Base implements IJSON
             return res;
         }
     }
-
 }

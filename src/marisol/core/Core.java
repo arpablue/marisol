@@ -15,7 +15,7 @@ import tools.logs.Logger;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public class Core extends Core_To{
     protected static Core CORE = null;

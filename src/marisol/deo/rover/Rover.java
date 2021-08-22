@@ -7,7 +7,7 @@ package marisol.deo.rover;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public class Rover extends Rover_To{
     

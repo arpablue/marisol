@@ -9,7 +9,7 @@ import tools.logs.Logger;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Core_Base extends Logger
 {

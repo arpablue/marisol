@@ -12,7 +12,7 @@ import marisol.deo.photolist.PhotoList;
 /**
  * ApiClient
  * It class manage the host and th e request to conesume a Rest API server.
- * @author ASUS
+ * @author Augusto Flores
  * 
  */
 public class ApiClient extends  ApiClient_To{

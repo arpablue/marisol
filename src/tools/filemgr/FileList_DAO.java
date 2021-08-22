@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class FileList_DAO extends FileList_Base
 {

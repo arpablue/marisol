@@ -7,7 +7,7 @@ package marisol.deo.rover;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Rover_Logic extends Rover_DAO 
 {

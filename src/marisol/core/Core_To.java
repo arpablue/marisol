@@ -7,7 +7,7 @@ package marisol.core;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Core_To extends Core_DAO{
     /**

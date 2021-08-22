@@ -7,7 +7,7 @@ package tools.filemgr;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class FileList_To extends FileList_Logic
 {

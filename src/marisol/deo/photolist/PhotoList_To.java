@@ -9,7 +9,7 @@ import marisol.deo.photo.Photo;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class PhotoList_To extends PhotoList_Logic
 {

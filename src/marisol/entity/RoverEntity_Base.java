@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package marisol.deo.photolist;
+package marisol.entity;
+
+import tools.logs.Logger;
 
 /**
  *
  * @author Augusto Flores
  */
-public class PhotoList extends PhotoList_To
+class RoverEntity_Base extends Logger
 {
-
-    
     
 }

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package marisol;
+package marisol.interfaces;
 
 import org.json.JSONObject;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public interface IJSON {
     /**

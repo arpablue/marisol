@@ -7,7 +7,7 @@ package marisol;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public class Marisol {
 

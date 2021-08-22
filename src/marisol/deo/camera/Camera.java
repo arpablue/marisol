@@ -7,7 +7,7 @@ package marisol.deo.camera;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public class Camera extends Camera_To
 {

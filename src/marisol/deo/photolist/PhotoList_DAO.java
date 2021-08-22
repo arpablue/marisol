@@ -6,14 +6,14 @@
 package marisol.deo.photolist;
 
 import java.util.ArrayList;
-import marisol.IJSON;
+import marisol.interfaces.IJSON;
 import marisol.deo.photo.Photo;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class PhotoList_DAO extends PhotoList_Base 
 {
@@ -67,5 +67,35 @@ class PhotoList_DAO extends PhotoList_Base
      */
     public int size(){
         return this.mPhotos.size();
+    }
+    /**
+     * It add a photo.
+     * @param photo it is the phot to be added. 
+     */
+    public void add( Photo photo )
+    {
+        if( this.mPhotos == null )
+        {
+            mPhotos = new ArrayList<Photo>();
+        }
+        mPhotos.add(photo);
+    }
+    /**
+     * It return the potho specified by the index, if the photo not exists in the position specified then return 
+     * null.
+     * @param index It is the position of the photo.
+     * @return It is the photo of the pósition specified.
+     */
+    public Photo get( int index )
+    {
+        if( index < 0 )
+        {
+            return null;
+        }
+        if( index >= this.size() )
+        {
+            return null;
+        }
+        return mPhotos.get(index);
     }
 }

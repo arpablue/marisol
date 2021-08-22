@@ -5,12 +5,12 @@
  */
 package marisol.deo.rover;
 
-import marisol.IJSON;
+import marisol.interfaces.IJSON;
 import org.json.JSONObject;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Rover_DAO extends Rover_Base implements IJSON
 {

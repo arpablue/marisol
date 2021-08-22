@@ -5,11 +5,24 @@
  */
 package marisol.deo.photolist;
 
+import marisol.deo.photo.Photo;
+
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class PhotoList_Logic extends PhotoList_DAO
 {
-    
+    /**
+     * It return a copy of the 
+     * @return  It is the copy of the current object.
+     */
+    public PhotoList copy() {
+        PhotoList res = new PhotoList();
+        for( Photo photo : this.mPhotos )
+        {
+            res.add(photo);
+        }
+        return res;
+    }    
 }

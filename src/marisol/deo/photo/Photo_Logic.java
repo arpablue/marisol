@@ -7,7 +7,7 @@ package marisol.deo.photo;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 class Photo_Logic extends Photo_DAO
 {

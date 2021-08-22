@@ -7,7 +7,7 @@ package tools.logs;
 
 /**
  *
- * @author ASUS
+ * @author Augusto Flores
  */
 public class Logger extends Logger_To {
     
