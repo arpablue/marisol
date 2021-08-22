@@ -24,10 +24,10 @@ class PhotoList_To extends PhotoList_Logic
             {
                 res =  res + ",";
             }
-            res = res + photo;
+            res = res + "\n" +photo;
             flag = true;
         }
-        res = res + "]";
+        res = res + "\n]";
         return res;
     }
 }

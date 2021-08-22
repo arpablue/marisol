@@ -53,4 +53,19 @@ class Challenge_DAO extends Challenge_Base
     public String getRover(){
         return this.mRoverName;
     }
+    protected String getFolder()
+    {
+        return "data/"+this.getRover()+"/";
+    }
+    /**
+     * It save the data in a file of the folder data.
+     * @param file It is the file to save the data.
+     * @return It i strue if the file has been created without problems.
+     */
+    @Override
+    public boolean save(String file)
+    {
+        file = getFolder()+file;
+        return super.save(file);
+    }
 }

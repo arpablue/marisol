@@ -11,5 +11,18 @@ package marisol.deo.camera;
  */
 class Camera_Logic extends Camera_DAO
 {
-    
+    /**
+     * It return a different canera object, but with the sale values of the current object.
+     * @return It is  copy of the current object.
+     */
+    public Camera copy()
+    {
+        Camera res = new Camera();
+        res.setId( this.getId());
+        res.setName(this.getName());
+        res.setFullName( this.getFullName() );
+        
+        res.setRoverId(this.getRoverId());
+        return res;
+    }
 }

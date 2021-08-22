@@ -31,10 +31,25 @@ public class Challenger extends Challenger_To
      */
     public boolean evaluate(){
         boolean res = true;
-        res = challenge1() & res ;
-        res = challenge2() & res ;
-        res = challenge3() & res ;
-        res = challenge4() & res ;
+        log("---STARTING THE EVALUATION OF ["+this.getRover()+"] ROVER ---");
+        res = challenge1() ;
+        if( res ){
+            res = challenge2();
+        }
+        if( res ){
+            res = challenge3();
+        }
+        if( res ){
+            res = challenge4();
+        }
+        log("-------------------- FINAL RESULT -------------------");
+        if( res ){
+            success("THE EVALUATIONM CHALLENGE PASS WITHOUT PROBLEMS");
+        }else{
+            fail("THE EVALUATIONM CHALLENGE NOT PASS,some problems appears during the execution.");
+        }
+        log("For more detail of the activity.log, you can see the content of the activit.log in the folder execution.");
+        log("-------------------- FINISH ----------------------------");
         return res;
     } 
 }

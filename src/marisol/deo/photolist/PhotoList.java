@@ -5,6 +5,8 @@
  */
 package marisol.deo.photolist;
 
+import java.io.File;
+import java.io.RandomAccessFile;
 import marisol.deo.photo.Photo;
 
 /**
@@ -29,12 +31,14 @@ public class PhotoList extends PhotoList_To
         {
             return false;
         }
+        
         for( Photo target : this.mPhotos )
         {
             if( target.equalsTo(photo) ){
                 return true;
             }
         }
+        System.out.println("NOT ->"+photo);
         return false;
     }
     /**
@@ -51,8 +55,10 @@ public class PhotoList extends PhotoList_To
         }
         for( Photo photo: this.mPhotos )
         {
-            if( !!photos.exist(photo) )
+            
+            if( !photos.exist( photo ) )
             {
+                
                 res.add(photo);
             }
         }

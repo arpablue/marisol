@@ -32,6 +32,37 @@ class Camera_DAO extends Camera_Base implements IJSON
     protected String mFullName;
     /**
      * 
+     * @param id It is trhe new identifier.
+     */
+    public void setId( int id ){
+        this.mId = id;
+    }
+    /**
+     * 
+     * @param name It is the new name.
+     */
+    public void setName( String name )
+    {
+        this.mName = name;
+    }
+    /**
+     * 
+     * @param fullName it is the new full name.
+     */
+    public void setFullName( String fullName){
+        this.mFullName = fullName;
+    }
+    /**
+     * 
+     * @param roverId It is the new Rover ID
+     */
+    public void setRoverId( int roverId)
+    {
+        this.mRoverId = roverId;
+    }
+    
+    /**
+     * 
      * @return It is the id of the Camera.
      */
     public int getId()

@@ -24,4 +24,5 @@ public class Photo extends Photo_To
         }
         return ( photo.getId() == this.getId() );
     }
+
 }

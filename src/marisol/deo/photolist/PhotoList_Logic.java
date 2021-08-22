@@ -24,7 +24,7 @@ class PhotoList_Logic extends PhotoList_DAO
         PhotoList res = new PhotoList();
         for( Photo photo : this.mPhotos )
         {
-            res.add(photo);
+            res.add(photo.copy());
         }
         return res;
     }    

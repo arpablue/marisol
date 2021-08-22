@@ -11,5 +11,18 @@ package marisol.deo.rover;
  */
 class Rover_Logic extends Rover_DAO 
 {
-    
+    /**
+     * It return a differnte object but with the same values of the current object.
+     * @return it is the copy of the current object.
+     */
+    public Rover copy()
+    {
+        Rover res = new Rover();
+        res.setId(mId);
+        res.setName(mName);
+        res.setStatus(mStatus);
+        res.setLandingDate(mLandingDate);
+        res.setLaunchDate(mLaunchDate);
+        return res;
+    }
 }

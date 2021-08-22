@@ -12,7 +12,7 @@ package tools.logs;
 class Logger_Logic extends Logger_DAO{
     /**
      * 
-     * @param msg 
+     * @param msg  It iks the message to the raised.
      */
     protected void write( String msg )
     {
@@ -20,7 +20,7 @@ class Logger_Logic extends Logger_DAO{
     }
     /**
      * 
-     * @param msg 
+     * @param msg  It iks the message to the raised.
      */
     public void log( String msg )
     {
@@ -28,7 +28,7 @@ class Logger_Logic extends Logger_DAO{
     }
     /**
      * 
-     * @param msg 
+     * @param msg  It iks the message to the raised.
      */
     public void error( String msg )
     {
@@ -36,7 +36,7 @@ class Logger_Logic extends Logger_DAO{
     }
     /**
      * 
-     * @param msg 
+     * @param msg  It iks the message to the raised. 
      */
     public void warning( String msg )
     {
@@ -44,10 +44,34 @@ class Logger_Logic extends Logger_DAO{
     }
     /**
      * Raise an info message
-     * @param msg 
+     * @param msg It iks the message to the raised.
      */
     public void info( String msg )
     {
         this.log( "INFO: "+msg );
+    }
+    /**
+     * Raise an success message
+     * @param msg It iks the message to the raised.
+     */
+    public void success( String msg )
+    {
+        this.log( "SUCCESS: "+msg );
+    }
+    /**
+     * Raise an pass message
+     * @param msg It iks the message to the raised.
+     */
+    public void pass( String msg )
+    {
+        this.log( "PASS: "+msg );
+    }
+    /**
+     * Raise an info message
+     * @param fail It iks the message to the raised.
+     */
+    public void fail( String msg )
+    {
+        this.log( "FAIL: "+msg );
     }
 }

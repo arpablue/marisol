@@ -41,6 +41,52 @@ class Photo_DAO extends Photo_Base implements IJSON
      */
     protected Rover mRover;
     /**
+     * 
+     * @param id It is the new identifier.
+     */
+    public void setId(int id)
+    {
+        this.mId = id;
+    }
+    /**
+     * It is the new sol.
+     * @param sol 
+     */
+    public void setSol( int sol){
+        this.mSol = sol;
+    }
+    /**
+     * It is the new iamge source.
+     * @param imgSrc 
+     */
+    public void setImgSrc(String imgSrc )
+    {
+        this.mImgSrc = imgSrc;
+    }
+    /**
+     * It is the new Earth Date.
+     * @param earthDate 
+     */
+    public void setEartDate( String earthDate)
+    {
+        this.mEarthDate = earthDate;
+    }
+    /**
+     * 
+     * @param camera it is the new camera.
+     */
+    public void setCamera( Camera camera){
+        this.mCamera = camera;
+    }
+    /**
+     * 
+     * @param rover It is the new orver.
+     */
+    public void setRover( Rover rover)
+    {
+        this.mRover = rover;
+    }
+    /**
      * It retyurn the ID of the photo.
      * @return 
      */
