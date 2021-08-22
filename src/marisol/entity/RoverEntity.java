@@ -5,6 +5,10 @@
  */
 package marisol.entity;
 
+import java.util.ArrayList;
+import marisol.deo.camera.Camera;
+import marisol.entity.camera.CameraList;
+import marisol.entity.camera.CameraEntity;
 import marisol.nasaapi.Nasa;
 
 /**
@@ -28,9 +32,103 @@ public class RoverEntity extends RoverEntity_To
     {
         this.setName(name);
     }
-
-    public boolean analize(){
+    /**
+     * It return teh camera with the bigger number of photos taked.
+     */
+    public CameraEntity getCameraMaxPhotos()
+    {
+        CameraList cameras = this.getCameras();
+        CameraEntity res = null;
+        if( cameras == null )
+        {
+            return null;
+        }
+        return cameras.getCameraMaxAmount();
+    }
+    /**
+     * It return teh camera with the bigger number of photos taked.
+     */
+    public CameraEntity getCameraMinPhotos()
+    {
+        CameraList cameras = this.getCameras();
+        CameraEntity res = null;
+        if( cameras == null )
+        {
+            return null;
+        }
+        return cameras.getCameraMinAmount();
+    }
+    /**
+     * It return a list of camaras of the rover.
+     * @return It is the camera list.
+     */
+    public CameraList getCameras()
+    {
+        CameraList res = new CameraList();
+        ArrayList<Camera> cameras = null;
         
+        cameras = this.getPhotos().getCameras();
+        
+        res.addPhotoList(mPhotos);
+        res.setCameraList( cameras );
+        
+        return res;
+       
     }
     
+    /**
+     * It load the photos of the current rover accordintg a number of Martian sol.
+     * @param sol it i sthe number of Martians Sol.
+     * @return It is true, the data has been loadedd without problems.
+     */
+    public boolean loadPhotoByMarsSol(int sol){
+        if( this.getName() == null )
+        {
+            warning("( RoverEntity - loadPhotoByMarsSol ) It is not possible made a request if the name of the rover is not specified.");
+            return false;
+        }
+        if( sol < 1){
+            warning("( RoverEntity - loadPhotoByMarsSol ) It is not possible made a request if the quantity of sol is not specified.");
+            return false;
+        }
+        this.mPhotos = Nasa.getPhotosByMarsSol(this.getName(), sol);
+        if( this.mPhotos.size() < 1 )
+        {
+            error("( RoverEntity - loadPhotoByMarsSol ) No photos of the ["+this.getName()+"] rover has been loaded.");
+            return false;
+        }
+        info("The photos for the ["+this.getName()+"] has been loaded without problems.");
+        return true;
+    }
+    /**
+     * It load the photos of the current rover accordintg a number of Martian sol, by default this quantity is 1000.
+     * @return It is true, the data has been loadedd without problems.
+     */
+    public boolean loadPhotoByMarsSol(){
+        return loadPhotoByMarsSol(1000);
+    }
+    /**
+     * It load the photos of the current rover accordintg a number of Martian sol.
+     * @param sol it i sthe number of Martians Sol.
+     * @return It is true, the data has been loadedd without problems.
+     */
+    public boolean loadPhotoByEarthDate( String earthDate ){
+        if( this.getName() == null )
+        {
+            warning("( RoverEntity - loadPhotoByEarthDate ) It is not possible made a request if the name of the rover is not specified.");
+            return false;
+        }
+        if( earthDate == null ){
+            warning("( RoverEntity - loadPhotoByEarthDate ) It is not possible made a request if the Earth Date  is not specified.");
+            return false;
+        }
+        this.mPhotos = Nasa.getPhotosByEarthDate(this.getName(), earthDate);
+        if( this.mPhotos.size() < 1 )
+        {
+            error("( RoverEntity - loadPhotoByEarthDate ) No photos of the ["+this.getName()+"] rover has been loaded.");
+            return false;
+        }
+        info("The photos for the ["+this.getName()+"] has been loaded without problems. Total of ["+this.size()+"] photos.");
+        return true;
+    }
 }

@@ -6,6 +6,7 @@
 package marisol.deo.photolist;
 
 import java.util.ArrayList;
+import marisol.deo.camera.Camera;
 import marisol.deo.photo.Photo;
 import tools.ArrayTools;
 
@@ -31,29 +32,29 @@ class PhotoList_Logic extends PhotoList_DAO
      * It collect all cameras of the current photos.
      * @return It is a list of the name of the cameras.
      */
-    public ArrayList<String> getCameras(){
-        ArrayList<String> res = new ArrayList<String>();
+    public ArrayList<Camera> getCameras(){
+        ArrayList<Camera> res = new ArrayList<Camera>();
         if( mPhotos == null )
         {
             return res;
         }
-        String camera;
+        Camera camera;
         for( Photo photo : this.mPhotos )
         {
-            camera =photo.getCamera().getFullName();
-            ArrayTools.addString(res, camera);
+            camera =photo.getCamera();
+            PhotoList.addString(res, camera);
         }
         return res;
     }
     /**
      * It search all phot take byu a camera and return t alist pf the photos.
-     * @param name It is the name of the camera.
+     * @param camera It is the name of the camera.
      * @return It i sthe list ogçf photo of the camera.
      */
-    public PhotoList getPhotoByCameraName(String name)
+    public PhotoList getPhotoByCamera(Camera camera)
     {
         PhotoList res = new PhotoList();
-        if( name == null )
+        if( camera == null )
         {
             return res;
         }
@@ -65,7 +66,7 @@ class PhotoList_Logic extends PhotoList_DAO
         {
             if( photo != null )
             {
-                if( photo.getCamera().getFullName().equalsIgnoreCase(name) ){
+                if( photo.getCamera().equalsTo( camera ) ){
                     res.add(photo);
                 }
             }

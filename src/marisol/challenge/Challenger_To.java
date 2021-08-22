@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package marisol.entity;
-
-import java.util.ArrayList;
-import marisol.nasaapi.Nasa;
+package marisol.challenge;
 
 /**
  *
  * @author Augusto Flores
  */
-class RoverEntity_Logic  extends RoverEntity_DAO
+class Challenger_To extends Challenge_Logic
 {
     
 }

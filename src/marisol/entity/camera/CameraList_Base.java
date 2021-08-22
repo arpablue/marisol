@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package marisol.entity;
+package marisol.entity.camera;
 
-import java.util.ArrayList;
-import marisol.nasaapi.Nasa;
+import tools.logs.Logger;
 
 /**
  *
- * @author Augusto Flores
+ * @author ASUS
  */
-class RoverEntity_Logic  extends RoverEntity_DAO
+class CameraList_Base extends Logger
 {
     
 }
