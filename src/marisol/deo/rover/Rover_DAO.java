@@ -34,6 +34,46 @@ class Rover_DAO extends Rover_Base implements IJSON
      * It contiant the Landing date.
      */
     protected String mLaunchDate;
+    
+    public int getId()
+    {
+        return this.mId;        
+    }
+    /**
+     * 
+     * @return it is the name.
+     */
+    public String getName()
+    {
+        return this.mName;
+    }
+    /**
+     * 
+     * @return It is the status.
+     */
+    public String getStatus()
+    {
+        return this.mStatus;
+    }
+    /**
+     * 
+     * @return It is the Landing Date.
+     */
+    public String getLandingDate()
+    {
+        return this.mLandingDate;
+    }
+    /**
+     * 
+     * @return it is the launch date.
+     */
+    public String getLaunchDate()
+    {
+        return this.mLaunchDate;
+    }
+    /**
+     * Default constructor.
+     */
     public Rover_DAO(){
         super();
         mId = -1;

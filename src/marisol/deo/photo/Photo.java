@@ -11,5 +11,17 @@ package marisol.deo.photo;
  */
 public class Photo extends Photo_To
 {
-    
+    /**
+     * It compare if the current phot is the same to another photo.
+     * @param photo It is the another phot o to compare.
+     * @return  It is true them both phot are the same.
+     */
+    public boolean equalsTo( Photo photo)
+    {
+        if( photo == null )
+        {
+            return false;
+        }
+        return ( photo.getId() == this.getId() );
+    }
 }

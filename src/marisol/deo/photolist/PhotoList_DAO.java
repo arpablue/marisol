@@ -66,6 +66,9 @@ class PhotoList_DAO extends PhotoList_Base
      * @return It is the number of photos.
      */
     public int size(){
+        if( this.mPhotos == null){
+            return -1;
+        }
         return this.mPhotos.size();
     }
     /**

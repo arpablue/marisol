@@ -41,6 +41,54 @@ class Photo_DAO extends Photo_Base implements IJSON
      */
     protected Rover mRover;
     /**
+     * It retyurn the ID of the photo.
+     * @return 
+     */
+    public int getId()
+    {
+        return this.mId;
+    }
+    /**
+     * 
+     * @return It is the quantioty of Martians sol.
+     */
+    public int getSol()
+    {
+        return mSol;
+    }
+    /**
+     * 
+     * @return It is the  image resource.
+     */
+    public String getImgSrc()
+    {
+        return  this.mImgSrc;
+    }
+    /**
+     * It return the Earth data of the photo.
+     * @return It return the Earth data of the photo.
+     */
+    public String getEarthDate()
+    {
+        return this.mEarthDate;
+    }
+    /**
+     * It return the camera whot take the photo.
+     * @return It is the camera whot take the photo.
+     */
+    public Camera getCamera()
+    {
+        return this.mCamera;
+    }
+    /**
+     * It return teh rover who take the photo.
+     * @return It is the rover whoo take the photo.
+     */
+    public Rover getRover()
+    {
+        return this.mRover;
+    }
+    /**
      * It load the data form a JSONObject
      * @param data It is the JSON object that content the data for the Rover.
      * @return It is true if all data has been loaded without proiblems.

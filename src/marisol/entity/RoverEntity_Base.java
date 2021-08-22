@@ -5,6 +5,7 @@
  */
 package marisol.entity;
 
+import java.util.ArrayList;
 import tools.logs.Logger;
 
 /**
@@ -13,5 +14,5 @@ import tools.logs.Logger;
  */
 class RoverEntity_Base extends Logger
 {
-    
+
 }
