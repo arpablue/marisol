@@ -38,7 +38,6 @@ public class PhotoList extends PhotoList_To
                 return true;
             }
         }
-        System.out.println("NOT ->"+photo);
         return false;
     }
     /**

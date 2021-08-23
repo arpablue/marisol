@@ -18,6 +18,9 @@ class PhotoList_To extends PhotoList_Logic
     {
         String res = "[";
         boolean flag = false;
+        if(this.mPhotos == null ){
+            return "[]";
+        }
         for( Photo photo : mPhotos )
         {
             if( flag )

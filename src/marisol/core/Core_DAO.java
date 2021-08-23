@@ -81,7 +81,7 @@ class Core_DAO extends Core_Base
         for( int i = 0; i < rovers.length(); i++ )
         {
             log("Rover identified: "+rovers.get(i).toString());
-            mRovers.add( rovers.get(i).toString() );
+            mRovers.add( rovers.get(i).toString());
         }
     }
     

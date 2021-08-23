@@ -74,9 +74,9 @@ class PhotoList_Logic extends PhotoList_DAO
         return res;
     }
     /**
-     * It search all photos took in a specific earth date
+     * It search all photos taken in a specific earth date
      * @param name It is the earth date of the photo..
-     * @return It i sthe list of photos took in a earth date..
+     * @return It i sthe list of photos taken in a earth date..
      */
     public PhotoList getPhotoByEarthDate(String earthDate)
     {

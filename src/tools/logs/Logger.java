@@ -16,7 +16,6 @@ import java.nio.file.Paths;
  * @author Augusto Flores
  */
 public class Logger extends Logger_To {
-        /**
     /**
      * It sage the data of all current phots using a file JSON format.
      * @param pathFile It is the path of the file.

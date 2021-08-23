@@ -30,6 +30,10 @@ public class Challenger extends Challenger_To
      * @return It is true if al poijt of the evaluation pass.
      */
     public boolean evaluate(){
+        String file = this.getFileName();
+        
+        this.setFile(this.getFolder()+"challenge");
+        this.delete();
         boolean res = true;
         log("---STARTING THE EVALUATION OF ["+this.getRover()+"] ROVER ---");
         res = challenge1() ;
@@ -44,12 +48,15 @@ public class Challenger extends Challenger_To
         }
         log("-------------------- FINAL RESULT -------------------");
         if( res ){
-            success("THE EVALUATIONM CHALLENGE PASS WITHOUT PROBLEMS");
+            success("THE EVALUATION CHALLENGE PASS WITHOUT PROBLEMS");
         }else{
-            fail("THE EVALUATIONM CHALLENGE NOT PASS,some problems appears during the execution.");
+            fail("THE EVALUATION CHALLENGE NOT PASS,some problems appears during the execution.");
         }
         log("For more detail of the activity.log, you can see the content of the activit.log in the folder execution.");
         log("-------------------- FINISH ----------------------------");
+        
+        this.setFile(file);
+        
         return res;
     } 
 }

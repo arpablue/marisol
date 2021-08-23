@@ -37,7 +37,7 @@ class CameraEntity_DAO extends CameraEntity_Base
         return mCamera;
     }
     /**
-     * It specify the ampount of photos took by the camera.
+     * It specify the ampount of photos taken by the camera.
      * @param amount It is the current amount of `hotos
      */
     protected  void setAmount(int amount )

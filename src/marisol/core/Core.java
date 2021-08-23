@@ -18,13 +18,22 @@ import tools.logs.Logger;
  * @author Augusto Flores
  */
 public class Core extends Core_To{
+    /**
+     * It contain a reference class for all application.
+     */
     protected static Core CORE = null;
+    /**
+     * It return a unique instace of teh seting of teh applications
+     * @return 
+     */
     public static Core getCore()
     {
         if( CORE == null )
         {
+            
             CORE = new Core();
-            CORE.loadJSONfile("conf/settings.json");
+            CORE.delete();
+            CORE.loadJSONfile("settings.json");
         }
         return CORE;
     }

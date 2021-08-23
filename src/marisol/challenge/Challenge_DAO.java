@@ -27,11 +27,11 @@ class Challenge_DAO extends Challenge_Base
      */
     protected String mRoverName;
     /**
-     * It contains the phot took form 1000 Martian Sol
+     * It contains the phot taken form 1000 Martian Sol
      */
     protected PhotoList mPhotosMS;
     /**
-     * It contains the phot took form 1000 EarthDatel
+     * It contains the phot taken form 1000 EarthDatel
      */
     protected PhotoList mPhotosED;
     /**
@@ -43,6 +43,7 @@ class Challenge_DAO extends Challenge_Base
         if( name == null){
             return;
         }
+        this.mRoverName = this.mRoverName.trim().toLowerCase();
         this.mRoverED = new RoverEntity( name );
         this.mRoverMS = new RoverEntity( name );
     }

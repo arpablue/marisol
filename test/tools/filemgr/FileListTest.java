@@ -47,7 +47,7 @@ public class FileListTest {
 "    }\n" +
 "}";
         FileList file = new FileList();
-        if( !file.load("./conf/settings.json") ){
+        if( !file.load("./settings.json") ){
             fail("It is not possible load the file.");
         }
         if( exp.equals(file.toString()) )

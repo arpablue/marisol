@@ -31,7 +31,7 @@ class Challenge_Logic extends Challenge_DAO
      * @return It is true if the scenario can be executed without problems.
      */
     protected boolean challenge1(){
-        log("-------------------1º Point challenge for ["+this.getRover()+"]--------------------------------------");
+        title("1ª Point challenge for ["+this.getRover()+"]");
         boolean res = true;
         mPhotosPath_MS = getFolder() +"Photos_Mars_Sol.json" ;
         mPhotos10Path_MS = getFolder() +"Photos_10_First_Mars_Sol.json" ;
@@ -44,14 +44,14 @@ class Challenge_Logic extends Challenge_DAO
         log("--------------Final Result");
         if( res )
         {
-            pass( "The 1º validation pass withtout probelms. ");
+            pass( "The 1ª validation pass withtout problems. ");
             log("    - The photos for 1000 Martians SOL of ["+this.getRover()+"] rover has been requested without problems.");
             log("    - The first 10 photos for 1000 Martians SOL of ["+this.getRover()+"] rover has been been saved in the "+ mPhotos10Path_MS +" file.");
-            log("    - Data of the first 10' photos: ");
+            log("    - Data of the first 10 photos: ");
             log( mPhotosMS.toString() );
 
         }else{
-            fail( "The 1º validation have problems to obtain the data of the photos. ");
+            fail( "The 1ª validation have problems to obtain the data of the photos. ");
         }
         
         log("------------------------------------------------------------------------------------------ ----------------");
@@ -64,7 +64,7 @@ class Challenge_Logic extends Challenge_DAO
      */
     protected boolean challenge2(){
         log("");
-        log("-------------------2º Point challenge for ["+this.getRover()+"]-----------------------------------------");
+        title("2ª Point challenge for ["+this.getRover()+"]");
         boolean res = true;
         mPhotosPath_ED = getFolder() +"Photos_Earth_Date.json" ;
         mPhotos10Path_ED = getFolder() +"Photos_10_Earth_Date.json" ;
@@ -90,14 +90,14 @@ class Challenge_Logic extends Challenge_DAO
         log("--------------Final Result");
         if( res )
         {
-            pass( "The 2º validation pass withtout probelms. ");
+            pass( "The 2ª validation pass withtout probelms. ");
             log("    - The photos for 1000 Earth Date of ["+this.getRover()+"] rover has been requested without problems.");
             log("    - The first 10 photos for 1000 Earth Date of ["+this.getRover()+"] rover has been been saved in the "+ mPhotos10Path_ED +" file.");
-            log("    - Data of the first 10' photos: ");
+            log("    - Data of the first 10 photos: ");
             log( mPhotosMS.toString() );
 
         }else{
-            fail( "The 2º validation have problesm to obtain the data of the photos. ");
+            fail( "The 2ª validation have problesm to obtain the data of the photos. ");
         }
         
         log("------------------------------------------------------------------------------------------ ----------------");
@@ -113,7 +113,7 @@ class Challenge_Logic extends Challenge_DAO
     protected boolean challenge3(){
         log("");
         log("");
-        log("-------------------3º validation challenge for ["+this.getRover()+"]-----------------------------------------");
+        title("3ª validation challenge for ["+this.getRover()+"]");
         String photosNotExist_MS = getFolder()+"photosNotExist_MS.json";
         String photosNotExist_ED = getFolder()+"photosNotExist_ED.json";
         
@@ -121,13 +121,13 @@ class Challenge_Logic extends Challenge_DAO
         log("     - The first 10 photos from 1000 Martians sol resquest is in ["+this.mPhotos10Path_MS+"] file.");
         log("     - The first 10 photos from Earth Date sol resquest is in ["+this.mPhotos10Path_ED+"] file.");
         
-        log("...Starting the phtoos comparison photos.");
+        log("...Starting the photos comparison photos.");
         
         PhotoList photos_ms_not = this.mPhotosMS.getPhotosNotExist(mPhotosED);
         PhotoList photos_ed_not = this.mPhotosED.getPhotosNotExist(mPhotosMS);
         
-        photos_ed_not.save(photosNotExist_MS);
-        photos_ed_not.save(photosNotExist_ED);
+        photos_ed_not.save( photosNotExist_MS );
+        photos_ed_not.save( photosNotExist_ED );
         
         
         boolean res = true;
@@ -141,7 +141,7 @@ class Challenge_Logic extends Challenge_DAO
             res = false;
         }
         if( photos_ed_not.size() < 1){
-            success("All photos collecte by the Earth Date  request exist in the 1000 Martians sol request.");
+            success("All photos collecte by the Earth Date request exist in the 1000 Martians sol request.");
         }else{
             fail("Some photos form the Earth Date sol request do not exist in the 1000 Martians sol request.");
             log("Theses photos can be found in the ["+photosNotExist_ED+"] file.");
@@ -166,11 +166,11 @@ class Challenge_Logic extends Challenge_DAO
     }
     /**
      * It method evaluate the first scenario.
-     * 4. Validate that the amounts of pictures that each "Curiosity" camera took on 1000 Mars sol is not greater than 10 times the amount taken by other cameras on the same date.
+     * 4. Validate that the amounts of pictures that each "Curiosity" camera taken on 1000 Mars sol is not greater than 10 times the amount taken by other cameras on the same date.
      * @return It is true if the scenario can be executed without problems.
      */
     protected boolean challenge4(){
-        log("-------------------4º validation challenge for ["+this.getRover()+"]-----------------------------------------");
+        title("4ª validation challenge for ["+this.getRover()+"]");
         boolean res = false;
         CameraList cameras = this.mRoverMS.getCameras();
         log("Iit is the list of cameras:");
